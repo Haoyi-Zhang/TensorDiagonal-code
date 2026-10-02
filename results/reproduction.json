@@ -1,0 +1,426 @@
+{
+  "all_scientific_outputs_identical": true,
+  "checker_report": {
+    "budget_records": 1566,
+    "cpu_seconds": 31.195001030999997,
+    "decoding_words": 270,
+    "exact_inputs": 83348,
+    "mutation_records": 10,
+    "noisy_certificates": 36,
+    "peak_rss_kib": 115376,
+    "status": "verified",
+    "structured_inputs": 94,
+    "wall_seconds": 31.22385839399999
+  },
+  "clean_campaign": {
+    "decoding": {
+      "budget_checks": 1566,
+      "cpu_seconds": 0.407573007,
+      "failures": 0,
+      "normalization_cases": 1,
+      "peak_rss_kib": 95404,
+      "wall_seconds": 0.4082675370000288,
+      "words": 270
+    },
+    "exhaustive": {
+      "consistent_support_profiles": {
+        "binary4": {
+          "1": 136,
+          "1,1": 36,
+          "1,1,1": 12,
+          "1,1,1,1": 1,
+          "1,1,2": 6,
+          "1,2": 24,
+          "2": 12,
+          "2,2": 3,
+          "rigid": 297
+        },
+        "pair_grid": {
+          "1": 156,
+          "1,1": 24,
+          "1,1,1": 1,
+          "1,2": 48,
+          "2": 192,
+          "3": 48
+        },
+        "ternary": {
+          "1": 24,
+          "1,1": 12,
+          "1,1,1": 1,
+          "1,2": 12,
+          "2": 24,
+          "rigid": 444
+        }
+      },
+      "counts": {
+        "binary4": {
+          "ambiguous": 230,
+          "inconsistent": 65009,
+          "unique": 297
+        },
+        "pair_grid": {
+          "ambiguous": 469,
+          "inconsistent": 15156,
+          "unique": 0
+        },
+        "ternary": {
+          "ambiguous": 73,
+          "inconsistent": 1670,
+          "unique": 444
+        }
+      },
+      "cpu_seconds": 23.636407535,
+      "failures": 0,
+      "instances": 83348,
+      "maximum_completion_coefficient_bits": 3,
+      "peak_rss_kib": 95404,
+      "wall_seconds": 23.639874830999815
+    },
+    "mutations": {
+      "cpu_seconds": 0.007766677999999999,
+      "failures": 0,
+      "instances": 10,
+      "peak_rss_kib": 95404,
+      "rejected": 10,
+      "wall_seconds": 0.007770810000010897
+    },
+    "noise": {
+      "cpu_seconds": 5.306029863,
+      "failures": 0,
+      "instances": 36,
+      "negative_controls": 2,
+      "peak_rss_kib": 95404,
+      "same_as_unit_amplitude": 36,
+      "verified": 36,
+      "wall_seconds": 5.306391408000081
+    },
+    "structured": {
+      "additional_ambiguous_case": 1,
+      "cauchy_cases": 42,
+      "cpu_seconds": 3.533782359,
+      "distance_cases": 36,
+      "failures": 0,
+      "generic_rigid_witnesses": 10,
+      "instances": 94,
+      "peak_rss_kib": 95404,
+      "rigid_cases": 5,
+      "wall_seconds": 3.5339672790000805
+    }
+  },
+  "code_integrity": {
+    "assertion_nodes": 32,
+    "optimized_mode_regression_in_unit_tests": true,
+    "optimized_mode_rejected_before_suite_execution": true,
+    "python_source_files_ast_parsed": 10,
+    "saved_checker_does_not_import_production_decoding_module": true,
+    "subprocess_use": "sequential -S suite isolation and optimized-mode regression only",
+    "syntax_errors": 0,
+    "third_party_runtime_imports": 0
+  },
+  "commands": [
+    {
+      "command": [
+        "env",
+        "PYTHONDONTWRITEBYTECODE=1",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "fresh standalone repository",
+      "exit_code": 0,
+      "max_rss_kib": 111472,
+      "name": "tests",
+      "result": "24 tests passed",
+      "system_cpu_seconds": 0.12,
+      "user_cpu_seconds": 17.52,
+      "wall_seconds": 16.85
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONDONTWRITEBYTECODE=1",
+        "python",
+        "-m",
+        "unittest",
+        "tests.test_saved_results",
+        "-v"
+      ],
+      "cwd": "fresh standalone repository",
+      "documented_subset": true,
+      "exit_code": 0,
+      "max_rss_kib": 111164,
+      "name": "saved",
+      "result": "3 saved-result regression tests passed",
+      "system_cpu_seconds": 0.05,
+      "user_cpu_seconds": 15.46,
+      "wall_seconds": 15.15
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONDONTWRITEBYTECODE=1",
+        "python",
+        "run.py",
+        "--suite",
+        "all",
+        "--out",
+        "results"
+      ],
+      "cwd": "fresh standalone repository",
+      "exit_code": 0,
+      "max_rss_kib": 95532,
+      "name": "campaign",
+      "result": "all five suites completed sequentially in -S child interpreters with zero recorded failures",
+      "system_cpu_seconds": 0.13,
+      "user_cpu_seconds": 33.96,
+      "wall_seconds": 33.69
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONDONTWRITEBYTECODE=1",
+        "python",
+        "check.py",
+        "--results",
+        "results"
+      ],
+      "cwd": "fresh standalone repository",
+      "exit_code": 0,
+      "max_rss_kib": 115376,
+      "name": "checker",
+      "result": "status verified; 83,348 exact, 94 structured, 36 noisy, 270 decoding, 1,566 budget, 10 mutation records",
+      "system_cpu_seconds": 0.09,
+      "user_cpu_seconds": 32.09,
+      "wall_seconds": 31.84
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONDONTWRITEBYTECODE=1",
+        "python",
+        "export_figures.py",
+        "--results",
+        "results",
+        "--out",
+        "results/plot-data"
+      ],
+      "cwd": "fresh standalone repository",
+      "exit_code": 0,
+      "max_rss_kib": 92712,
+      "name": "figures",
+      "result": "plot data regenerated",
+      "system_cpu_seconds": 0.06,
+      "user_cpu_seconds": 0.87,
+      "wall_seconds": 0.51
+    }
+  ],
+  "comparison_rule": "JSON timing/memory fields cpu_seconds, wall_seconds, and peak_rss_kib are excluded; all other JSON content and all non-JSON bytes are compared exactly.",
+  "date": "2026-09-26",
+  "documented_clean_command_cpu_seconds": 84.84,
+  "documented_clean_command_wall_seconds": 82.89,
+  "exact_result_comparison": [
+    {
+      "result": "decoding-summary.json",
+      "scientific_content_identical": true
+    },
+    {
+      "result": "decoding.json",
+      "scientific_content_identical": true
+    },
+    {
+      "result": "exhaustive-summary.json",
+      "scientific_content_identical": true
+    },
+    {
+      "result": "exhaustive.jsonl",
+      "scientific_content_identical": true
+    },
+    {
+      "result": "mutations-summary.json",
+      "scientific_content_identical": true
+    },
+    {
+      "result": "mutations.json",
+      "scientific_content_identical": true
+    },
+    {
+      "result": "negative-controls.json",
+      "scientific_content_identical": true
+    },
+    {
+      "result": "noise-certificates.json",
+      "scientific_content_identical": true
+    },
+    {
+      "result": "noise-summary.json",
+      "scientific_content_identical": true
+    },
+    {
+      "result": "noise.csv",
+      "scientific_content_identical": true
+    },
+    {
+      "result": "plot-data/noise-3.dat",
+      "scientific_content_identical": true
+    },
+    {
+      "result": "plot-data/noise-5.dat",
+      "scientific_content_identical": true
+    },
+    {
+      "result": "plot-data/noise-7.dat",
+      "scientific_content_identical": true
+    },
+    {
+      "result": "plot-data/noise-table.tex",
+      "scientific_content_identical": true
+    },
+    {
+      "result": "structured-summary.json",
+      "scientific_content_identical": true
+    },
+    {
+      "result": "structured.json",
+      "scientific_content_identical": true
+    }
+  ],
+  "final_typesetting": {
+    "all_fonts_embedded_and_subset": true,
+    "article_abstract_words": 199,
+    "article_bytes": 365177,
+    "article_keywords": 5,
+    "article_log": {
+      "fatal_errors": 0,
+      "labels_may_have_changed": false,
+      "overfull_boxes": 0,
+      "undefined_references_or_citations": 0,
+      "underfull_warning_occurrences": 23
+    },
+    "article_pages": 35,
+    "article_pages_visually_inspected": 35,
+    "article_references": 64,
+    "article_source_labels": 112,
+    "article_uncited_bibliography_entries": 0,
+    "article_undefined_citations": 0,
+    "article_unique_cited_keys": 64,
+    "clean_project_zip_recompile_200_dpi_pages_changed": {
+      "article": 0,
+      "proof_supplement": 0
+    },
+    "clean_project_zip_recompile_text_identical": true,
+    "figure_1_and_figure_2_design_sources_byte_identical_to_pre_repair_sources": true,
+    "final_200_dpi_renderings_pixel_identical_to_inspected_versions": true,
+    "ghostscript_full_parse": true,
+    "preflight": {
+      "article_openable": true,
+      "encrypted": false,
+      "likely_scanned": false,
+      "proof_supplement_openable": true,
+      "xfa_present": false
+    },
+    "proof_supplement_bytes": 343666,
+    "proof_supplement_log": {
+      "fatal_errors": 0,
+      "labels_may_have_changed": false,
+      "overfull_boxes": 0,
+      "undefined_references_or_citations": 0,
+      "underfull_warning_occurrences": 24
+    },
+    "proof_supplement_pages": 30,
+    "proof_supplement_pages_visually_inspected": 30,
+    "render_dpi": 200,
+    "visual_defects_found_after_final_repair": 0
+  },
+  "interpretation": "Successful deterministic finite reproduction and exact scientific-output agreement. Saved-record integrity is now checked against independently reconstructed structured, noise, and decoding designs. The finite checks do not replace the general proofs, certify compatible-truth existence for noisy inputs, or constitute independent human or proof-assistant review.",
+  "method": "clean standalone candidate copy; exact README commands; one suite process at a time; child suites use Python -S; no network, external data, parallel worker pool, or parent-directory imports",
+  "post_packaging_exact_readme_recheck": {
+    "budget_records": 1566,
+    "checker_status": "verified",
+    "commands_used_exactly_as_documented": true,
+    "decoding_words": 270,
+    "exact_inputs": 83348,
+    "noisy_certificates": 36,
+    "note": "All four README commands and the dedicated saved-result regression command succeeded from the final standalone ZIP extraction. The 16 deterministic scientific files matched their packaged baselines after excluding only runtime fields from JSON.",
+    "saved_result_regression_tests_passed": 3,
+    "scientific_content_identical": true,
+    "scientific_files_compared": 16,
+    "source": "final standalone repository ZIP extraction",
+    "structured_inputs": 94,
+    "timings": {
+      "campaign": {
+        "max_rss_kib": 95536,
+        "system_cpu_seconds": 0.15,
+        "user_cpu_seconds": 33.18,
+        "wall_seconds": 32.96
+      },
+      "checker": {
+        "max_rss_kib": 115196,
+        "system_cpu_seconds": 0.08,
+        "user_cpu_seconds": 31.76,
+        "wall_seconds": 31.55
+      },
+      "figures": {
+        "max_rss_kib": 92716,
+        "system_cpu_seconds": 0.08,
+        "user_cpu_seconds": 0.87,
+        "wall_seconds": 0.55
+      },
+      "saved_regressions": {
+        "max_rss_kib": 111264,
+        "system_cpu_seconds": 0.05,
+        "user_cpu_seconds": 14.7,
+        "wall_seconds": 14.41
+      },
+      "tests": {
+        "max_rss_kib": 111420,
+        "system_cpu_seconds": 0.15,
+        "user_cpu_seconds": 17.7,
+        "wall_seconds": 17.09
+      }
+    },
+    "unit_tests_passed": 24
+  },
+  "reference_integrity": {
+    "article_uncited_bibliography_entries": 0,
+    "article_undefined_citations": 0,
+    "article_unique_cited_keys": 64,
+    "article_unique_references": 64,
+    "full_text_model_or_theorem_passage_checks": 19,
+    "primary_metadata_and_abstract_checks": 45,
+    "proof_supplement_references": 17,
+    "proof_supplement_unique_cited_keys": 17,
+    "repairs": "Restored the published Agarwal--Negahban--Wainwright subtitle; corrected the Xia--Yuan DOI; added and inspected Auddy--Yuan (2023).",
+    "row_level_audit": "reference_audit.csv"
+  },
+  "saved_result_regressions": {
+    "accepted_baseline": {
+      "budget_records": 1566,
+      "decoding_words": 270,
+      "noise": 36,
+      "structured": 94
+    },
+    "count": 3,
+    "interpretation": "checker-coverage regressions only; the unchanged scientific records continue to pass and these fixtures are not experiments refuting or proving the general theorems",
+    "rejected_mutations": [
+      "n=2 zero-mixed arbitrary-basis record declaring distance 2 although independent component distance is 1",
+      "distance-2-1 truth orbit substitution [1,0,0,1]",
+      "duplicate structured identifier",
+      "duplicate or omitted noise certificate/CSV key",
+      "mislabeled noise exponent",
+      "word-0-1 budget-two list count changed from 2 to 999",
+      "altered decoding observation",
+      "swapped decoding case labels"
+    ],
+    "status": "passed"
+  },
+  "scientific_suite_cpu_seconds": 32.891559442,
+  "status": "passed",
+  "unit_tests": {
+    "count": 24,
+    "status": "passed"
+  }
+}
